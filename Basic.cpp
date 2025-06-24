@@ -46,6 +46,26 @@ int search(vector<int>& nums, int target) {
         return left;
     }
 
+
+int mySqrt(int x) {
+        if(x==0)
+            return 0;
+        int lo=1,high=x,res;
+        uint64_t mid;
+        while(lo<=high)
+        {
+            mid=lo+(high-lo)/2;
+            if(mid*mid<=x)
+            {
+                lo=mid+1;
+                res=mid;
+            }
+            else
+                high=mid-1;
+        }
+        return res;
+    }
+
 int main(){
   int t; cin>>t;
   while(t--){
